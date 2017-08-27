@@ -51,20 +51,25 @@ public class ShopTest {
         assertEquals(19.0, basket.totalValueOfBasket());
     }
 
-    @Test
-    public void testBuyOneGetOneFree(){
-        basket.addToBasket(bread);
-        basket.addToBasket(bread);
-        basket.buyOneGetOneFree();
-        assertEquals(9.5, basket.totalValueOfBasket());
-    }
+//    @Test
+//    public void testBuyOneGetOneFree(){
+//        basket.addToBasket(bread);
+//        basket.addToBasket(bread);
+//        basket.buyOneGetOneFree();
+//        assertEquals(9.5, basket.totalValueOfBasket());
+//    }
 
     @Test
     public void testTenPresentOff(){
         basket.addToBasket(dvdPlayer);
         basket.addToBasket(dvdPlayer);
-        basket.tenPresentsOff();
-        assertEquals(0, basket.tenPresentsOff());
+        assertEquals(35.1, basket.totalValueOfBasket());
+    }
+
+    @Test
+    public void noTenPresentOff(){
+        basket.addToBasket(dvdPlayer);
+        assertEquals(19.5, basket.totalValueOfBasket());
     }
 
     @Test

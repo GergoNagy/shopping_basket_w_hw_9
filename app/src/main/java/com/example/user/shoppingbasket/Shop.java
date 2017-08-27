@@ -1,10 +1,6 @@
 package com.example.user.shoppingbasket;
 import java.util.ArrayList;
 
-/**
- * Created by user on 27/08/2017.
- */
-
 public class Shop {
 
     ArrayList<Sellable> basket;
@@ -34,25 +30,22 @@ public class Shop {
         for (int i = 0; i < this.basket.size(); i++){
             total += this.basket.get(i).getPrice();
         }
-        return total;
-    }
-
-    public void buyOneGetOneFree(){
-
-    }
-
-    public double tenPresentsOff(){
-        double value = totalValueOfBasket();
-        if (value > 20.00){
-            return value - (totalValueOfBasket() * 0.1);
-        } else {
-            return totalValueOfBasket();
+        if  (total >= 20) {
+            double value  =  total - (total * 0.1);
+            return value;
         }
+        else
+            return total;
     }
+
+//    public void buyOneGetOneFree(){
+//
+//    }
+
 
     public double loyaltyCard(){
-        double valueOfBasket = totalValueOfBasket();
-        return valueOfBasket - (totalValueOfBasket() * 0.02);
+        double value = totalValueOfBasket();
+        return value - (value * 0.02);
     }
     
     
