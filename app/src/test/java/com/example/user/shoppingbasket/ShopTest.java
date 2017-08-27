@@ -11,50 +11,67 @@ import static junit.framework.Assert.assertEquals;
 
 public class ShopTest {
 
-    Shop shop;
+    Shop basket;
     Bread bread;
     DvdPlayer dvdPlayer;
 
     @Before
     public void before(){
-        bread = new Bread(10);
-        dvdPlayer = new DvdPlayer(19);
-        shop = new Shop();
+        bread = new Bread(9.50);
+        dvdPlayer = new DvdPlayer(19.50);
+        basket = new Shop();
     }
 
     @Test
     public void testAddToBasket(){
-        shop.addToBasket(bread);
-        assertEquals(1, shop.sizeOfBasket());
+        basket.addToBasket(bread);
+        assertEquals(1, basket.sizeOfBasket());
     }
 
     @Test
     public void testRemoveOneItemFromBasket(){
-        shop.addToBasket(bread);
-        shop.addToBasket(bread);
-        shop.removeOneFromBasket(bread);
-        assertEquals(1, shop.sizeOfBasket());
+        basket.addToBasket(bread);
+        basket.addToBasket(bread);
+        basket.removeOneFromBasket(bread);
+        assertEquals(1, basket.sizeOfBasket());
     }
 
     @Test
     public void testRemoveAllFromBasket(){
-        shop.addToBasket(bread);
-        shop.addToBasket(bread);
-        shop.removeAllFromBasket();
-        assertEquals(0, shop.sizeOfBasket());
+        basket.addToBasket(bread);
+        basket.addToBasket(bread);
+        basket.removeAllFromBasket();
+        assertEquals(0, basket.sizeOfBasket());
     }
 
     @Test
     public void testTotalValueOfBasket(){
-        shop.addToBasket(bread);
-        shop.addToBasket(bread);
-        assertEquals(20, shop.totalValueOfBasket());
+        basket.addToBasket(bread);
+        basket.addToBasket(bread);
+        assertEquals(19.0, basket.totalValueOfBasket());
     }
 
     @Test
     public void testBuyOneGetOneFree(){
-        shop.addToBasket(bread);
-        shop.addToBasket(bread);
-        assertEquals(10, shop.totalValueOfBasket());
+        basket.addToBasket(bread);
+        basket.addToBasket(bread);
+        basket.buyOneGetOneFree();
+        assertEquals(9.5, basket.totalValueOfBasket());
+    }
+
+    @Test
+    public void testTenPresentOff(){
+        basket.addToBasket(dvdPlayer);
+        basket.addToBasket(dvdPlayer);
+        basket.tenPresentsOff();
+        assertEquals(0, basket.tenPresentsOff());
+    }
+
+    @Test
+    public void testLoyaltyCard(){
+        basket.addToBasket(bread);
+        basket.addToBasket(bread);
+        basket.loyaltyCard();
+        assertEquals(18.62, basket.loyaltyCard());
     }
 }

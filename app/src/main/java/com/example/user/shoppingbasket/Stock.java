@@ -5,13 +5,13 @@ package com.example.user.shoppingbasket;
  */
 
 public abstract class Stock {
-    int price;
+    double price;
 
-    public Stock(int price){
+    public Stock(double price){
         this.price = price;
     }
 
-    public int getPrice(){
+    public double getPrice(){
         return this.price;
     }
 }

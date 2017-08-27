@@ -6,7 +6,7 @@ package com.example.user.shoppingbasket;
 
 public class Bread extends Stock implements Sellable {
 
-    public Bread(int price){
+    public Bread(double price){
         super(price);
     }
 }

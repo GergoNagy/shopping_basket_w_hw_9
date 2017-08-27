@@ -29,8 +29,8 @@ public class Shop {
         this.basket.clear();
     }
 
-    public int totalValueOfBasket(){
-        int total = 0;
+    public final double totalValueOfBasket(){
+        double total = 0;
         for (int i = 0; i < this.basket.size(); i++){
             total += this.basket.get(i).getPrice();
         }
@@ -39,6 +39,20 @@ public class Shop {
 
     public void buyOneGetOneFree(){
 
+    }
+
+    public double tenPresentsOff(){
+        double value = totalValueOfBasket();
+        if (value > 20.00){
+            return value - (totalValueOfBasket() * 0.1);
+        } else {
+            return totalValueOfBasket();
+        }
+    }
+
+    public double loyaltyCard(){
+        double valueOfBasket = totalValueOfBasket();
+        return valueOfBasket - (totalValueOfBasket() * 0.02);
     }
     
     

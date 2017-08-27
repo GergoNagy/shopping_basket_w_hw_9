@@ -5,5 +5,5 @@ package com.example.user.shoppingbasket;
  */
 
 interface Sellable {
-    int getPrice();
+    double getPrice();
 }
