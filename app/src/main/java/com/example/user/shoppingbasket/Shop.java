@@ -10,7 +10,9 @@ public class Shop {
     }
 
     public void addToBasket(Sellable sellable){
-        this.basket.add(sellable);
+//        if (!basket.contains(sellable)) {
+            this.basket.add(sellable);
+//        }
     }
 
     public int sizeOfBasket() {
