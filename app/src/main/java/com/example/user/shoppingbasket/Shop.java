@@ -28,6 +28,14 @@ public class Shop {
     public void removeAllFromBasket(){
         this.basket.clear();
     }
+
+    public int totalValueOfBasket(){
+        int total = 0;
+        for (int i = 0; i < this.basket.size(); i++){
+            total += this.basket.get(i).getPrice();
+        }
+        return total;
+    }
     
     
 }

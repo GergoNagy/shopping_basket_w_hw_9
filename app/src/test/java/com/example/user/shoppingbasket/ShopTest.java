@@ -43,4 +43,11 @@ public class ShopTest {
         shop.removeAllFromBasket();
         assertEquals(0, shop.sizeOfBasket());
     }
+
+    @Test
+    public void testTotalValueOfBasket(){
+        shop.addToBasket(bread);
+        shop.addToBasket(bread);
+        assertEquals(20, shop.totalValueOfBasket());
+    }
 }
