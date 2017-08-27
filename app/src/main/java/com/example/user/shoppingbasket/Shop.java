@@ -36,6 +36,10 @@ public class Shop {
         }
         return total;
     }
+
+    public void buyOneGetOneFree(){
+
+    }
     
     
 }

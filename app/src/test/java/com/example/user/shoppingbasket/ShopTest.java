@@ -50,4 +50,11 @@ public class ShopTest {
         shop.addToBasket(bread);
         assertEquals(20, shop.totalValueOfBasket());
     }
+
+    @Test
+    public void testBuyOneGetOneFree(){
+        shop.addToBasket(bread);
+        shop.addToBasket(bread);
+        assertEquals(10, shop.totalValueOfBasket());
+    }
 }
