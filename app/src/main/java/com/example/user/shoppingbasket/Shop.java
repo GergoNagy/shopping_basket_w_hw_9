@@ -38,11 +38,6 @@ public class Shop {
             return total;
     }
 
-//    public void buyOneGetOneFree(){
-//
-//    }
-
-
     public double loyaltyCard(){
         double value = totalValueOfBasket();
         return value - (value * 0.02);

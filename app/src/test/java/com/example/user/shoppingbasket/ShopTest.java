@@ -67,6 +67,15 @@ public class ShopTest {
     }
 
     @Test
+    public void testTenPresentOffPlusLoyalty(){
+        basket.addToBasket(dvdPlayer);
+        basket.addToBasket(dvdPlayer);
+        basket.totalValueOfBasket();
+        basket.loyaltyCard();
+        assertEquals(34.398, basket.loyaltyCard());
+    }
+
+    @Test
     public void noTenPresentOff(){
         basket.addToBasket(dvdPlayer);
         assertEquals(19.5, basket.totalValueOfBasket());
